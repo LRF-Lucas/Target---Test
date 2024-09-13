@@ -1,0 +1,16 @@
+function setup() 
+{
+  let texto = "Exemplo de string";  
+  let textoInvertido = inverterString(texto);
+  console.log("Texto invertido: " + textoInvertido);
+}
+
+function inverterString(str) 
+{
+  let invertido = "";
+  for (let i = str.length - 1; i >= 0; i--) 
+  {
+    invertido += str[i];
+  }
+  return invertido;
+}
