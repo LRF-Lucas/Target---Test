@@ -1,0 +1,33 @@
+function setup() 
+{
+  let numero = 21; 
+  let pertence = pertenceAFibonacci(numero);
+  if (pertence) 
+  {
+    console.log(numero + " pertence à sequência de Fibonacci.");
+  } 
+else 
+  {
+    console.log(numero + " não pertence à sequência de Fibonacci.");
+  }
+}
+
+function fibonacciAte(n) 
+{
+  let fib = [0, 1];
+  let a = 0, b = 1;
+  while (b <= n) 
+  {
+    let temp = a + b;
+    a = b;
+    b = temp;
+    fib.push(b);
+  }
+  return fib;
+}
+
+function pertenceAFibonacci(n) 
+{
+  let sequencia = fibonacciAte(n);
+  return sequencia.includes(n);
+}
