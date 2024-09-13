@@ -1,5 +1,5 @@
-function setup() {
-  // Dados de faturamento
+function setup() 
+{
   let faturamento = [
     { "dia": 1, "valor": 22174.1664 },
     { "dia": 2, "valor": 24537.6698 },
@@ -33,21 +33,17 @@ function setup() {
     { "dia": 30, "valor": 8414.61 }
   ];
 
-  // Filtrar os dias com faturamento > 0
   let faturamentoValido = faturamento.filter(dia => dia.valor > 0);
 
-  // Menor e maior faturamento
   let menorFaturamento = min(faturamentoValido.map(d => d.valor));
   let maiorFaturamento = max(faturamentoValido.map(d => d.valor));
 
-  // Calcular a média
   let somaFaturamento = faturamentoValido.reduce((acc, d) => acc + d.valor, 0);
   let mediaFaturamento = somaFaturamento / faturamentoValido.length;
 
-  // Número de dias acima da média
   let diasAcimaMedia = faturamentoValido.filter(d => d.valor > mediaFaturamento).length;
 
-  // Exibir resultados no console
+
   console.log("Menor faturamento: " + menorFaturamento.toFixed(2));
   console.log("Maior faturamento: " + maiorFaturamento.toFixed(2));
   console.log("Dias acima da média: " + diasAcimaMedia);
